@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<style>
+body{
+  text-align: center;
+  font-family: gulim;
+  
+}
+
+table{
+	  margin-left: auto; margin-right: auto;
+  	  width:300px;
+      text-align: center;
+      border-collapse: collapse;
+
+}
+</style>
+<script>
+function login(f){
+   var c = confirm('Are You Login ...');
+   if(c == true){
+	   f.method = 'GET';
+	   f.action='index.html';
+	   f.submit();
+   };
+   
+};
+</script>
+<title>LOGIN</title>
+</head>
+<body>
+<h1>LOGIN</h1>
+<img src="img/mm03.jpg" width="120px" height="120px">
+<form >
+<table>
+<tr><td> ID </td><td><input type="text" name ="nm" required="required">   </td></tr>
+<tr><td> PWD </td><td><input type="password" name ="pwd" required="required">  </td></tr>
+</table>
+<br>
+<input type="reset" value="RESET">
+
+<input onclick="login(this.form);" type="button" value="LOGIN">
+</form>
+</body>
+</html>

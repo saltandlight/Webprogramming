@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<style>
+body{
+  text-align: center;
+  font-family: gulim;
+  background: white;
+  
+}
+
+table{
+	  margin-left: auto; margin-right: auto;
+  	  width:300px;
+      text-align: center;
+      border-collapse: collapse;
+
+}
+</style>
+
+<script>
+function register(f){
+   var c = confirm('Are You Join...');
+   if(c == true){
+	   f.method = 'GET';
+	   f.action='index.html';
+	   f.submit();
+   };
+   
+};
+</script>
+
+
+<title>JOIN</title>
+</head>
+<body>
+<h1>JOIN</h1>
+<img src="img/mm02.jpg" width="120px" height="120px">
+<form>
+<table>
+<tr><td>NAME</td><td><input type="text" name="nm" required="required"></td></tr>
+<tr><td>EMAIL</td><td> <input type="email" name="e" required="required"></td></tr>
+<tr><td>TEL</td><td> <input type="tel" 
+pattern = "[0-9]{3}-[0-9]{4}-[0-9]{4}"
+title="###-####-####" 
+name="e" required="required"></td></tr>
+<tr><td>PASSWORD</td><td><input type="password" name ="pwd" required="required"></td></tr>
+
+</table>
+<br>
+<input type="submit" onclick="register(this.form);" value="REGISTER">
+</form>
+</body>
+</html>
