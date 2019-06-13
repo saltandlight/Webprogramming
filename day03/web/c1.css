@@ -1,0 +1,26 @@
+@charset "EUC-KR";
+
+ /* CSS Comments */
+ /* h1은 선택자(selector)*/
+ /*전체 페이지에 글로벌하게 들어가는 것 지정 */
+ *{
+  /* border: 3px solid black;*/
+ } 
+  h1, h2{ 
+    color: red;
+    background:black;
+  }
+/*   # 뒤에 id를 넣고 설정 */
+ #h1{
+   color:pink;
+   background:blue;
+ }
+
+ .cc{
+   color:red;
+   background:gray;
+  }
+  
+  input[name="id"]{
+    background: yellow;
+  }

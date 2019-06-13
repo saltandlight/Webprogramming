@@ -1,0 +1,22 @@
+@charset "EUC-KR";
+
+ ul{
+    list-style: none;
+    text-align: center;
+    border-top: 1px solid black; 
+    border-bottom: 1px solid black; 
+    padding: 10px 0;
+  
+  }
+
+  ul li{
+   display: inline;
+   text-transform: uppercase;
+   padding: 0 10px; letter-spacing:10px;
+  
+  }
+
+  ul li a {text-decoration: none; color:black;}
+  
+  ul li a:hover { text-decoration: underline;}
+  
