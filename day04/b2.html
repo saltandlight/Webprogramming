@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<link href="https://fonts.googleapis.com/css?family=Jua&display=swap" rel="stylesheet">
+<link href="table.css" rel="stylesheet">
+<style>
+/* Global CSS */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+header, section, footer {
+	margin: 0 auto;
+}
+
+/* Header CSS */
+header {
+	width: 800px;
+	height: 150px;
+	background-image: url('img/bom.jpg');
+	position: relative;
+}
+
+header>#top_nav {
+	position: absolute;
+	height: 30px;
+	width: 200px;
+	right: 1px;
+	top: 1px;
+	font-size: 0.6em;
+}
+
+header>hgroup {
+	height: 80px;
+	padding-top: 30px;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+header>#main_nav {
+	width: 400px;
+	margin: 0 auto;
+	height: 40px;
+	font-size: 1.3em;
+}
+
+header>#top_nav>ul>li {
+	float: left;
+	margin: 0 5px;
+}
+
+header>#main_nav>ul>li {
+	float: left;
+	margin: 0 20px;
+}
+/* Section CSS */
+section {
+	width: 800px;
+	height: 500px;
+	background: gray;
+}
+
+#left_aside {
+	float: left;
+	width: 150px;
+	height: 800px;
+	background: #F6E3CE;
+}
+
+#center_aside {
+	float: left;
+	width: 550px;
+	height: 800px;
+	background: white;
+	text-align: center;
+	padding: 20px auto;
+}
+
+#right_aside {
+	float: left;
+	width: 100px;
+	height: 800px;
+	background: #F6E3CE;
+}
+
+#right_aside>img {
+	margin: 5px 10px;
+}
+/* Footer CSS */
+footer {
+	width: 800px;
+	height: 400px;
+	background: #F5BCA9;
+}
+
+#foot_img {
+	height: 30px;
+	float: right;
+	display: inline;
+	margin-right: 20px;
+}
+
+#t1 {
+	text-align: center;
+}
+
+h1 {
+	font-family: 'Jua', sans-serif;
+}
+
+.ddang>img {
+	display: inline;
+	top-padding: 20px;
+	width:150px;
+	height:150px;
+}
+</style>
+<title>Ddangchil love</title>
+</head>
+<body>
+	<header>
+		<nav id="top_nav">
+			<ul>
+				<li><a href="">LOGIN</a></li>
+				<li><a href="">REGISTER</a></li>
+				<li><a href="">ABOUT US</a></li>
+				<li><a href="">MAP</a></li>
+			</ul>
+		</nav>
+		<hgroup>
+			<h1>땡칠이네 꽃집</h1>
+		</hgroup>
+		<nav id="main_nav">
+			<ul>
+				<li><a href="">Cute </a></li>
+				<li><a href="">Flower</a></li>
+				<li><a href="">Yeoksam</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<aside id="left_aside"></aside>
+		
+		<aside id="center_aside">
+		<table class="t1">
+				<thead>
+					<tr>
+						<th>NO</th>
+						<th>FLOWER</th>
+						<th>DATE</th>
+						<th>BUYER</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>수국</td>
+						<td>2019-06-13</td>
+						<td>KSK</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>카네이션</td>
+						<td>2019-06-12</td>
+						<td>HSK</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>수선화</td>
+						<td>2019-06-11</td>
+						<td>LDY</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>엔젤아이즈 제라늄</td>
+						<td>2019-06-10</td>
+						<td>LHB</td>
+					</tr>
+					<tr>
+						<td>5</td>
+						<td>캄파눌라</td>
+						<td>2019-06-09</td>
+						<td>KSK</td>
+					</tr>
+					<tr>
+						<td>6</td>
+						<td>장미</td>
+						<td>2019-06-08</td>
+						<td>HSK</td>
+					</tr>
+					<tr>
+						<td>7</td>
+						<td>팬지</td>
+						<td>2019-06-07</td>
+						<td>LDY</td>
+					</tr>
+				</tbody>
+
+			</table>
+			<div class="ddang">
+				<img src="img/dangch1.jpg" > 
+				<img src="img/dangch1back.jpg"> 
+				<img src="img/dangch3.jpg"> 
+				<img src="img/pange.jpg" >
+				<img src="img/susan.jpg">
+				<img src="img/kampanula.jpg" >
+
+			</div>
+
+			
+		</aside>
+		<aside id="right_aside">
+			<img src="img/flower1.jpg" width="80px" height="150px"> 
+			<img src="img/flower2.jpg" width="80px" height="150px"> 
+			<img src="img/flower3.jpg" width="80px" height="150px">
+
+		</aside>
+	</section>
+	<footer>
+		<div id="foot_img">
+			<img src="img/facebook.png" width="30px" height="30px"> <img
+				src="img/insta3.png" width="30px" height="30px">
+
+		</div>
+
+	</footer>
+</body>
+</html>
+
+
