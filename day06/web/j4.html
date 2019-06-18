@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+a{
+ text-decoration:none;
+ color:black;
+}
+</style>
+<script>
+function calc(){
+	var num1 = document.getElementById('n1').value;	
+	var num2 = document.getElementById('n2').value;
+	var sum = parseInt(num1)+parseInt(num2);
+	var r = document.getElementById('result');
+	
+	
+	r.style.color='red';
+	if(isNaN(sum)){
+		r.innerHTML = 0;
+		
+	}else{
+		r.innerHTML = sum;
+	}
+	
+
+	
+    var rr = document.getElementById('rr');
+	if(isNaN(sum)){
+		rr.value=0;
+		r.value=0;
+		
+	}else{
+		rr.value = sum; 
+		r.value=sum;
+	}
+	
+}
+
+</script>
+</head>
+<body>
+<form> 
+NUMBER1 <input type="text" name="n1" id="n1"><br>
+NUMBER2 <input type="text" name="n2" id="n2"><br>
+Result<input type="number" id ="rr" readonly="readonly"><br>
+<input type="button" value="Calc" onclick="calc();">
+
+
+</form>
+<h1 id="result"></h1>
+</body>
+</html>

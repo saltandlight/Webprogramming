@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script>
+function join(f){
+	 var id =f.id.value; 
+	 var pwd=f.pwd.value;
+	 var age = f.age.value;
+	 
+	 var pwd_ch=f.pwd_ch.value;
+	 var id_tx = document.getElementById('id');
+	 var id_sp = document.getElementById('id_sp');
+	 
+	 var pwd_tx= document.getElementById('pwd');
+	 var pwd_sp = document.getElementById('pwd_sp');
+	 
+	 var pwd_ch_tx = document.getElementById('pwd_ch');
+	 var pwd_ch_sp = document.getElementById('pwd_ch_sp');
+	 
+	 var hint_tx = document.getElementById('hint');
+	 var hint_sp = document.getElementById('hint_sp');
+	 
+	
+	 var h1 = document.getElementById('h1');
+	 var h2 = document.getElementById('h2');
+	 var h3 = document.getElementById('h3');
+	 
+	 
+	 var h1_ch = h1.getAttribute("checked") 
+	 var h2_ch = h2.getAttribute("checked") 
+	 var h3_ch = h3.getAttribute("checked") 
+	 var hb_sp = document.getElementById('hb_sp');
+	 
+	 var age_tx = document.getElementById('age');
+	 var age_sp = document.getElementById('age_sp');
+
+	 
+	 var flag=0;
+	 if(id =='' || id == null){
+		id_sp.innerHTML='ID is Mandatory';
+		id_sp.style.color='red';
+	    id_tx.style.background='red';
+		flag++;
+	 }
+	 if(flag==0 && pwd=='' || pwd == null){
+		 pwd_sp.innerHTML='PWD is Mandatory';
+		 pwd_sp.style.color='red';
+		 pwd_tx.style.background='red';
+		 flag++;
+	 }
+	 //id 가 4자리 이상이어야 함.
+/* 	 if(pwd.length < 4){
+		 alert('Inupt 4 character');
+		 f.pwd.focus();
+		return;
+	 } */
+	 if(flag==0 && pwd!=pwd_ch){
+		 pwd_ch_sp.innerHTML='PWD is not equal to PWD CHECK!';
+		 pwd_ch_sp.style.color='red';
+		 pwd_ch_tx.style.background='red';
+		 flag++;
+	 }
+	 if(flag==0 && f.hint.value=='h1'){
+		 hint_sp.innerHTML='HINT IS NOT CHECKED!';
+		 hint_sp.style.color='red';
+	     hint_tx.style.background='red'; 
+	 	 flag++;
+	 }
+	 
+/* 	 if( h1_ch == false &&  h2_ch == false &&  h3_ch==false){
+		 hb_sp.innerHTML='HOBBY is Mandatory!';
+		 hb_sp.style.color='red';
+	   /*   hb_tx.style.background-color='red';  
+	 	 flag++;
+	 }
+	 */
+	 
+     if(flag==0 && (f.hb.value=='' || f.hb.value==null)){
+		 hb_sp.innerHTML='HOBBY is Mandatory!';
+		 hb_sp.style.color='red';
+	 	 flag++;
+	 } 
+	 
+	 if(flag==0 &&(age=='' || age == null)){
+		 age_sp.innerHTML='AGE is Mandatory!';
+		 age_sp.style.color='red';
+		 age_tx.style.background='red';
+		 flag++;
+	 }
+	 
+	 
+	 if(flag==0)
+		 var c = confirm('Do you Join ?'); 
+	 if(c==true){
+		 f.submit();
+	 }
+ };
+
+
+</script>
+</head>
+<body>
+	<form action="login" method="get">
+		ID<input type="text" name="id" id="id">&nbsp;<span id="id_sp"></span><br>
+		PWD<input type="text" name="pwd" id="pwd"> &nbsp; <span id="pwd_sp"></span><br>
+		PWD<input type="text" name="pwd_ch" id="pwd_ch"> &nbsp; <span id="pwd_ch_sp"></span><br>
+		HINT&nbsp;<select name="hint" id="hint">
+				<option value="h1">질문을 선택해주세요.</option>
+				<option value="h2">가장 존경하는 인물은?</option>
+				<option value="h3">좋아하는 연예인 이름은?</option>
+				<option value="h4">나의 장래희망은?</option>
+				<option value="h4">가장 무서웠던 선생님 성함은?</option>
+		   </select>&nbsp;<span id="hint_sp"></span>
+ 		<br>
+	   HOBBY  <input type="radio" name="hb" id="h1"> TRAIN
+	 		  <input type="radio" name="hb" id="h2"> STUDY
+	  		  <input type="radio" name="hb" id="h3"> MUSIC
+	    &nbsp;<span id="hb_sp"></span><br>
+	    AGE <input type="text" name="age" id="age"> &nbsp;<span id="age_sp"></span>
+	    <br>
+	    <input type="button" onclick="join(this.form);"  value="Join">
+	</form>
+</body>
+</html>
