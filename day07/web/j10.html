@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		body {
+			text-align: center;
+		}
+	</style>
+	<script>
+		function check_juice() {
+			var juice = document.myform.juice;
+			var jibul = document.myform.jinul;
+			var tx_show = document.getElementById('selected');
+			var tx_show2 = document.getElementById('met');
+			var cnt=0;
+			var cnt2=0;
+			tx_show.value ='';
+			for (var i in juice) {
+				if (juice[i].checked==true) {
+					cnt++;
+
+				}
+			};
+
+			// alert(cnt);
+			for (var i in juice) {
+				if (juice[i].checked) {
+					cnt2++;
+					tx_show.value += juice[i].value;
+					if(cnt2 < cnt){
+						tx_show.value += ', ';
+					 }
+				}
+			};
+
+			tx_show2.value = document.myform.jibul.value;
+
+		};
+
+	</script>
+</head>
+
+<body>
+	<form name="myform">
+		포카리<input type="checkbox" id="pokari" name="juice" value="포카리">
+		게토레이<input type="checkbox" id="getorai" name="juice" value="게토레이">
+		2%<input type="checkbox" id="epro" name="juice" value="2%"><br><br>
+
+		지불방법
+		<select name="jibul">
+			<option value="">카드/현금</option>
+			<option value="카드">카드</option>
+			<option value="현금">현금</option>
+		</select>
+		<br><br>
+		<input type="button" onclick="check_juice();" value="선택"><br><br>
+		<input type="text" id="selected" readonly="readonly"><br><br>
+		<input type="text" id="met" readonly="readonly">
+	</form>
+</body>
+
+</html>

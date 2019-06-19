@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		table {
+			width: 300px;
+			text-align: center;
+		}
+
+		table>thead>tr {
+			background: black;
+			color: yellow;
+		}
+
+		table>tbody>tr {
+			text-align: center;
+			background: pink;
+		}
+
+		table>input {
+			text-align: center;
+		}
+
+		.c1 {
+			background-color: lightblue;
+		}
+
+		.c2 {
+			background-color: pink;
+		}
+	</style>
+	<script>
+		var result2 = '';
+		function initial() {
+			result2 = '';
+			var tx_show = document.getElementById('tx_show');
+			tx_show.value = 0;
+		};
+
+		function append(str) {
+			result2 += str;
+		};
+
+		function eval_ch() {
+			var impr = eval(result2);
+			var tx_show = document.getElementById('tx_show');
+			tx_show.value = impr;
+			result2 = impr;
+		};
+	</script>
+</head>
+
+<body>
+	<table>
+		<tr>
+			<td colspan="4"><input type="text" class="c1" id="tx_show" size="40px" readonly="readonly"></td>
+		</tr>
+		<tr>
+			<td colspan="4"><input type="button" class="c1" onclick="initial();" style="width:220pt;height:20pt;"
+					id="bt_c" width="40px" value="C">
+			</td>
+		</tr>
+		<tr>
+			<td><input type="button" class="c1" onclick="append('+');" id="bt_pl" style="width:55pt;height:20pt;"
+					value="+"></td>
+			<td><input type="button" class="c1" onclick="append('-');" id="bt_mi" style="width:55pt;height:20pt;"
+					value="-"></td>
+			<td><input type="button" class="c1" onclick="append('*');" id="bt_mul" style="width:55pt;height:20pt;"
+					value="x"></td>
+			<td><input type="button" class="c1" onclick="append('/');" id="bt_div" style="width:55pt;height:20pt;"
+					value="/"></td>
+		</tr>
+		<tr>
+			<td><input type="button" class="c2" onclick="append('1');" id="bt_1" style="width:55pt;height:20pt;"
+					value="1"></td>
+			<td><input type="button" class="c2" onclick="append('2');" id="bt_2" style="width:55pt;height:20pt;"
+					value="2"></td>
+			<td><input type="button" class="c2" onclick="append('3');" id="bt_3" style="width:55pt;height:20pt;"
+					value="3"></td>
+			<td><input type="button" class="c2" onclick="append('0');" id="bt_0" style="width:55pt;height:20pt;"
+					value="0"></td>
+		</tr>
+		<tr>
+			<td><input type="button" class="c2" onclick="append('4');" id="bt_4" style="width:55pt;height:20pt;"
+					value="4"></td>
+			<td><input type="button" class="c2" onclick="append('5');" id="bt_5" style="width:55pt;height:20pt;"
+					value="5"></td>
+			<td><input type="button" class="c2" onclick="append('6');" id="bt_6" style="width:55pt;height:20pt;"
+					value="6"></td>
+			<td rowspan="2"><input class="c2" onclick="eval_ch();" type="button" id="bt_equal"
+					style="width:55pt;height:40pt;" value="="></td>
+		</tr>
+		<tr>
+			<td><input type="button" class="c2" onclick="append('7');" id="bt_7" style="width:55pt;height:20pt;"
+					value="7"></td>
+			<td><input type="button" class="c2" onclick="append('8');" id="bt_8" style="width:55pt;height:20pt;"
+					value="8"></td>
+			<td><input type="button" class="c2" onclick="append('9');" id="bt_9" style="width:55pt;height:20pt;"
+					value="9"></td>
+		</tr>
+	</table>
+
+</body>
+
+</html>

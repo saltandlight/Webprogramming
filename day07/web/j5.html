@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style></style>
+<script>
+var person = [
+	{id:"id01", name:"조쿼카"}, 
+	{id:"id02", name:"박다람쥐"}, 
+	{id:"id03", name:"구용하"}, 
+	{id:"id04", name:"문재신"}, 
+	{id:"id05", name:"김윤식"}
+];
+
+function getdata(){
+	
+	var div = document.getElementById('div');
+	var result = '';
+	for(var i in person){
+		//모든 객체 안에 함수가 들어있다.
+		person[i].print = function(){
+			return 	'<h2>'+
+			this.id+' '+this.name+
+			'</h2>';
+		};6
+		result += person[i].print();
+	}
+
+	// for(var i in person){
+	// 	result += person[i].print();
+	// }
+
+	
+	div.innerHTML=result;
+};
+</script>
+</head>
+<body>
+<h1 onclick="getdata();">Click</h1>
+<div id="div"></div>
+</body>
+</html>

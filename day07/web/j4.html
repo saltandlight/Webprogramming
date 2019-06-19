@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style></style>
+<script>
+var Car = {
+	name:'k1',
+	size:1000,
+	go: function(){
+		return this.name+' Go';
+	},
+	stop:function(){
+		return this.name+' Stop';
+	}
+
+};
+
+var result = Car.go();
+alert(result);
+var d = new Date();
+
+//JavaScript Class
+//함수와 모양은 같지만 앞의 글자가 대문자
+function Person(name, age){
+   this.name= name; //var가 생략된 것임.
+   this.age=age;
+   
+};
+//함수가 한 번만 만들어짐.
+Person.prototype.print = function(){
+	alert(this.name +' '+this.age);
+
+};
+var p1 = new Person('Gulo','30');
+var p2 = new Person('Tom','20');
+p1.print();
+// var p3 = new Person('','30');
+// var p4 = new Person('James','30');
+// var p5 = new Person('James','30');
+</script>
+</head>
+<body>
+
+</body>
+</html>
