@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style>
+		body {
+			text-align: center;
+		}
+
+		.img1>img {
+			width: 200px;
+			height: 200px;
+		}
+
+		.img2>img {
+			width: 200px;
+			height: 200px;
+		}
+
+		.menu1 {
+			margin: auto;
+		}
+
+		.menu2 {
+			margin: auto;
+		}
+
+		table>td {
+			width: 500px;
+			height: 50px;
+		}
+
+
+		.gyel {
+			display: block;
+			position: absolute;
+			margin-left: 320px;
+			background-color: lightgray;
+			width: 700px;
+			height: 500px;
+		}
+
+		.guche {
+			position: absolute;
+			background-color: white;
+			margin-left: 60px;
+			margin-top: 30px;
+			padding: 50px 0 50px;
+			width: 300px;
+			height: 350px;
+
+		}
+
+		.tt {
+			margin-top: 200px;
+			margin-left: 200px;
+		}
+
+		.pojang {
+			margin-top: 500px;
+			margin-left: 320px;
+			text-align: center;
+			width: 700px;
+			height: 100px;
+			display: block;
+			background-color: lightgray;
+		}
+
+		.gyel_met {
+			margin-top: 30px;
+			margin-left: 320px;
+			text-align: center;
+			width: 700px;
+			height: 100px;
+			display: block;
+			background-color: lightgray;
+		}
+
+		.requirem {
+			margin-top: 30px;
+			margin-left: 320px;
+			text-align: center;
+			width: 700px;
+			height: 100px;
+			display: block;
+			background-color: lightgray;
+		}
+
+		#bt_gyel {
+			background-color: #4641D9;
+			color: white;
+			width: 50px;
+			height: 30px;
+		}
+
+		#bt_fgyel {
+			background-color: #4641D9;
+			color: white;
+		}
+		#del_bt{
+			background-color:red;
+			color:white;
+		}
+		.cl_po {
+			display: inline;
+		}
+	</style>
+	<script>
+		var sh_item = '';
+		var sh_price = '';
+		var price = '총 가격:'
+		var result = 0;
+		var count=0;
+	
+		function initial() {
+			window.location.reload();
+		};
+		function fin_gyel() {
+			var card = document.getElementById('card');
+			var cash = document.getElementById('cash');
+
+		};
+
+		function add_item_tb(item_num, val) {
+			var my_tbody = document.getElementById('my-tbody');
+			var row = my_tbody.insertRow(my_tbody.rows.length); // 하단에 추가
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(1);
+			var cell3 = row.insertCell(2);
+			var cell4=row.insertCell(3);
+			count++;
+			switch (item_num) {
+				case 1: sh_item = '돼지국밥'; break;
+				case 2: sh_item = '콩나물국밥'; break;
+				case 3: sh_item = '내장탕'; break;
+				case 4: sh_item = '설렁탕'; break;
+				case 5: sh_item = '순대국밥'; break;
+				case 6: sh_item = '소고기국밥'; break;
+			}
+			cell1.innerHTML = sh_item;
+			cell2.innerHTML = val;
+			cell3.innerHTML= count;
+            cell4.innerHTML='<input type="button" style="background-color:pink;color:black;" onclick="delete_row(count);" value="X">';                             
+		}
+
+		function delete_row(num){
+			var my_tbody = document.getElementById('my-tbody');
+			my_tbody.deleteRow(num-1);
+			count--;
+		};
+	</script>
+</head>
+
+<body>
+	<div class="img1">
+		<img src="img/dageguk.jpg" onclick="add_item_tb(1, 7500);" width="100px" height="100px">
+		<img src="img/kongnamulguk.jpg" onclick="add_item_tb(2, 6000);" width="100px" height="100px">
+		<img src="img/najangguk.jpg" onclick="add_item_tb(3, 7500);" width="100px" height="100px">
+		<br>
+		<table class="menu1">
+			<tr>
+				<td style="width:170px;">1. 돼지국밥</td>
+				<td style="width:170px;">1. 콩나물국밥</td>
+				<td style="width:170px;">1. 내장탕</td>
+			</tr>
+			<tr>
+				<td style="width:170px;">2. 7,500원</td>
+				<td style="width:170px;">2. 6,000원</td>
+				<td style="width:170px;">2. 7,500원</td>
+			</tr>
+		</table>
+
+	</div>
+	<div class="img2">
+		<img src="img/sulung.jpg" onclick="add_item_tb(4, 7500);">
+		<img src="img/sundaguk.jpg" onclick="add_item_tb(5, 6000);">
+		<img src="img/sogogiguk.jpg" onclick="add_item_tb(6, 7500);">
+		<table class="menu2">
+			<tr>
+				<td style="width:170px;">1. 설렁탕</td>
+				<td style="width:170px;">1. 순대국밥</td>
+				<td style="width:170px;">1. 소고기국밥</td>
+			</tr>
+			<tr>
+				<td style="width:170px;">2. 7,500원</td>
+				<td style="width:170px;">2. 6,000원</td>
+				<td style="width:170px;">2. 7,500원</td>
+			</tr>
+		</table>
+	</div>
+	<br>
+	<div class="gyel" id="back">
+		<div class="guche" id="show_gyel">
+			<table class="cc">
+				<tbody id="my-tbody"></tbody>
+			</table>
+		</div>
+		<div class="tt">
+			<span id="total"></span>
+			<input type="button" id="bt_gyel" value="결제">
+
+		</div>
+	</div>
+	<br>
+	<div class="pojang" id="po1">
+		<div>
+			<strong>포장여부</strong>
+			<div class="cl_po"><img src="img/packed1.PNG"><input type="radio" name="pojang" id="pojang"></div>
+			<div class="cl_po"> <img src="img/sikdang.PNG"><input type="radio" name="pojang" id="npojang"></div>
+
+		</div>
+	</div>
+	<div class="gyel_met" id="po2">
+
+		<div>
+			<strong>결제수단</strong>
+			<div class="cl_po"><img src="img/card.PNG"><input type="radio" name="gyel_met" id="card"></div>
+			<div class="cl_po"><img src="img/cash.PNG"><input type="radio" name="gyel_met" id="cash"></div>
+
+		</div>
+	</div>
+	<div class="requirem" id="po3">
+
+		<div>
+			<strong>요청사항</strong>
+			<input type="text" id="require_txt" placeholder="국이 짜다.">
+		</div>
+	</div>
+	<br>
+	<input type="button" onclick="initial();" class="gyel_cc" id="bt_cancel" value="취소하기">
+	<input type="button" onclick="fin_gyel();" id="bt_fgyel" value="결제하기">
+</body>
+
+</html>
