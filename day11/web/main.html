@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+	<style>
+		body{
+			background:lightblue;
+			text-align:center;
+		}
+		div {
+			margin: 0px auto;
+			width: 300px;
+			border: 2px solid blue;
+		}
+	</style>
+	<script>
+		function display(data) {
+			$('div').empty();
+			$(data).each(function (index, item) {
+				var str = '';
+				str += '<p>'
+				str += item.rank + " " + item.keyword + " "  + item.cnt+" ";
+
+				if(item.type == 'up'){
+					str +="<img src='up.PNG' width='20px' height='20px'>";
+				}
+				else{
+					str +="<img src='down.PNG' width='20px' height='20px'>";
+				}
+				str += '</p>';
+				$('div').append(str);
+
+			});
+		};
+		function getData() {
+			$.ajax({
+				url: 'musicchart',
+				success: function (result) {
+					//alert(typeof(eval(result)));;
+					display(eval(result));
+				}
+			});
+		};
+
+		$(document).ready(function () {
+			getData();
+			setInterval(getData, 3000);
+		});
+
+	</script>
+</head>
+
+<body>
+	<h1>Music Chart</h1>
+	<div></div>
+
+</body>
+
+</html>
