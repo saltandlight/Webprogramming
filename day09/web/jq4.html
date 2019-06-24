@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+	<style></style>
+	<script>
+		//문서가 준비되면 함수가 호출될 거다~~
+		$(document).ready(function () {
+			// $('td').css('background', 'orange'); //나 뺴고 다~~
+			$('tr:nth-child(2n)').css('background', 'orange'); 
+			$('tr:nth-child(2n+1)').css('background', 'pink'); 
+			$('th').css('background','lightgreen');
+			$('table').css({
+				width:400
+			});
+		 });
+
+
+	</script>
+</head>
+
+<body>
+	<h1>Table</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td >id01</td><td>James</td></tr>
+			<tr><td>id02</td><td>littlestar</td></tr>
+			<tr><td>id03</td><td>comet</td></tr>
+			<tr><td>id04</td><td>still</td></tr>
+			<tr><td>id05</td><td>hello</td></tr>
+
+		</tbody>
+	</table>
+</body>
+
+</html>
+
