@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJl63Jrf4-rfS_YJDmhB23G5Od1o26CoI" async
+		defer></script>
+	<style>
+		#map {
+			width: 300px;
+			height: 300px;
+			border: 2px solid orange;
+		}
+	</style>
+	<script>
+		$(document).ready(function () {
+			var center = new google.maps.LatLng(34.875696, 128.416922);
+			var map = new google.maps.Map(
+				document.querySelector('#map'), {
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					zoom: 12,
+					center: center
+				}
+
+			);
+
+			// HTML5 Geolocation API
+			//브라우저에게 요청함 => 브라우저가 알아서 기계에 있는 GPS 모듈을 가지고 위도, 경도 갖고 오기
+			//기본적으로 기지국의 위치를 이용해서 삼각기법 이용
+			//와이파이 이용
+
+			// function success(p){
+			// 	var center= new google.maps.LatLng(
+			// 		p.coords.latitude,
+			// 		p.coords.longitude
+			// 	);
+			// 	map.setCenter(center);
+
+			// };
+			// function error(){
+			// 	alert('Location Error');
+			// };
+
+
+			// var watch = window.navigator.geolocation.watchPosition(
+			// 	success,
+			// 	error,
+			// 	{
+			// 		enableHighAccuarcy:true,
+			// 		//모든 수단과 방법을 가리지 않고 가져와라~ 이런 뜻
+			// 		timeout:10000,
+			// 		maximumAge:0
+			// 		//조금만 움직여도 위치를 받아야 함.
+
+			// 	}
+
+			// );
+
+// 41.9102415,12.3959148
+		    $('button').click(function(){
+				var center = new google.maps.LatLng(41.9102415,12.3959148);
+				map.setCenter(center);
+			});
+		});
+
+	</script>
+</head>
+
+<body>
+	<button>Italy</button>
+	<div id="map"></div>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+	<style>
+		div {
+			width: 300px;
+			height: 80px;
+			border: 15px solid red;
+
+		}
+
+		img {
+			height: 50px;
+			width: 40px;
+		}
+	</style>
+	<script>
+		function cartleave(e){
+			console.log('leave');
+		};
+		function cartdrop(e){
+			e.preventDefault();
+			var src = e.dataTransfer.getData('m');
+			console.log(src+' '+e.target);
+			$(e.target).append($('#'+src));
+		};
+		function mydrop(e){
+			e.preventDefault();
+			var src = e.dataTransfer.getData('m');
+			console.log(src+' '+e.target);
+			$(e.target).append($('#'+src));
+
+
+			// e.target.appendChild(document.getElementById(src));
+			// $(e.target).append($(''));
+		};
+		function allowdrop(e){
+			e.preventDefault();
+		};
+		function mydrag(e){
+			e.dataTransfer.effectAllowed = 'move';
+			//m이라는 이름으로 e.target.id를 저장하겠다~~(ex. m1)
+			e.dataTransfer.setData('m',e.target.id);
+		};
+
+	</script>
+</head>
+
+<body>
+	<h1>Drag and Drop</h1>
+	<h3>Item</h3>
+	<div ondrop="mydrop(event)" ondragover="allowdrop(event)">
+		<img src="m1.jpg" id="m1" draggable="true" ondragstart="mydrag(event)">
+		<img src="m2.jpg" id="m2" draggable="true" ondragstart="mydrag(event)">
+		<img src="m3.jpg" id="m3" draggable="true" ondragstart="mydrag(event)">
+		<img src="m4.jpg" id="m4" draggable="true" ondragstart="mydrag(event)">
+		<img src="m5.jpg" id="m5" draggable="true" ondragstart="mydrag(event)">
+	</div>
+	<h3>Cart</h3>
+	<div ondrop="cartdrop(event)" ondragover="allowdrop(event)">
+
+	</div>
+</body>
+
+</html>

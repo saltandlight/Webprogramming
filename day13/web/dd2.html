@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+	<style>
+		div {
+			width: 300px;
+			height: 80px;
+			border: 10px solid red;
+
+		}
+
+		img {
+			height: 50px;
+			width: 40px;
+		}
+	</style>
+	<script>
+
+		sessionStorage.cnt=0;
+		function itemdrop(e) {
+			var src = e.dataTransfer.getData('m');
+			console.log(src);
+			$('#item').append($('#' + src));
+			//그 id에 해당하는 element가 들어와서 append됨.
+		};
+		function itemleave(e) {
+
+		};
+
+		function allewdrop(e) {
+			e.preventDefault();
+		};
+
+		function cartdrop(e) {
+			var src = e.dataTransfer.getData('m');
+			console.log(src);
+			$('#cart').append($('#'+src));
+			var cnt=0;
+			if(sessionStorage.cnt == null || sessionStorage.cnt==0){
+				sessionStorage.cnt=1;
+				cnt++;
+				// $('h3').text(sessionStorage.cnt);
+			}else{
+				var cnt = ++sessionStorage.cnt;
+				
+			}
+			$('h3').text(cnt);
+			//그 id에 해당하는 element가 들어와서 append됨.
+		};
+		function cartleave(e) {
+
+		};
+
+
+		function imgdrag(e) {
+			e.dataTransfer.effectAllowed = 'move';
+			e.dataTransfer.setData('m', e.target.id);
+		};
+	</script>
+</head>
+
+<body>
+	<h1>ITEM</h1>
+	<div id="item" ondrop="itemdrop(event)" 
+	ondragleave="itemleave(event)" ondragover="allewdrop(event)">
+		<img src="m1.jpg" id="m1" draggable="true" ondragstart="imgdrag(event)">
+		<img src="m2.jpg" id="m2" draggable="true" ondragstart="imgdrag(event)">
+		<img src="m3.jpg" id="m3" draggable="true" ondragstart="imgdrag(event)">
+		<img src="m4.jpg" id="m4" draggable="true" ondragstart="imgdrag(event)">
+		<img src="m5.jpg" id="m5" draggable="true" ondragstart="imgdrag(event)">
+	</div>
+	<h1>CART</h1>
+	<h3></h3>
+	<div id="cart" ondrop="cartdrop(event)" ondragleave="cartleave(event)" ondragover="allewdrop(event)"></div>
+
+</body>
+
+</html>
